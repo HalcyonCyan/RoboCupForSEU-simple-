@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- 启动TF修复 -->
+    <include file="$(find robocup_final)/launch/fix_tf.launch"/>
+    
+    <!-- 延迟2秒后启动主建图系统 -->
+    <node pkg="rostopic" type="rostopic" name="delay_node" args="pub -1 /start_slam std_msgs/Empty" />
+    
+    <node pkg="rosservice" type="rosservice" name="timed_start" args="call --wait /start_slam '{}'" launch-prefix="bash -c 'sleep 2; $0 $@' ">
+        <param name="command" value="roslaunch robocup_final slam.launch"/>
+    </node>
+</launch>
