@@ -1,0 +1,8 @@
+obstacle_range: 2.5
+raytrace_range: 3.0
+footprint: [[-0.13, -0.13], [-0.13, 0.13], [0.13, 0.13], [0.13, -0.13]]
+inflation_radius: 0.38  # 适度膨胀半径
+cost_scaling_factor: 4.0  # 适中缩放因子
+
+observation_sources: scan
+scan: {sensor_frame: base_scan, data_type: LaserScan, topic: scan, marking: true, clearing: true}

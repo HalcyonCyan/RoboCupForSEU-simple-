@@ -1,0 +1,13 @@
+# 恢复行为参数
+rotate_recovery:
+  sim_granularity: 0.017
+  acc_lim_th: 0.5
+  max_rotational_vel: 0.5
+  min_rotational_vel: 0.1
+  tolerance: 0.10
+  frequency: 20.0
+
+clear_costmap_recovery:
+  reset_distance: 2.0
+  # 不清除静态层，只清除障碍物层
+  layer_names: ["obstacles"]
